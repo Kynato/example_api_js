@@ -1,0 +1,13 @@
+---
+- name: Initial config
+  hosts: localhost
+  become: yes
+  become_user: root
+  tasks:
+    - name: Install packages
+      apt:
+        pkg:
+          - nodejs
+          - npm
+    - name: npm install packages
+      ansible.builtin.command: npm install
